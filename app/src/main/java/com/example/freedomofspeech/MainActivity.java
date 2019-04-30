@@ -19,12 +19,17 @@ public class MainActivity extends AppCompatActivity {
         final TextView resultsTextView = findViewById(R.id.resultsTextView);
         SeekBar seekBar = findViewById(R.id.seekBar);
 
+        /**
+         * SeekBar : Dotted scroll bar for user to select the desired number of players
+         */
+        resultsTextView.setText("1");
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
                 int numPlayers = progress + 1;
-                resultsTextView.setText("" + numPlayers + "");
+                String numPlayersStr = Integer.toString(numPlayers);
+                resultsTextView.setText(numPlayersStr);
             }
 
             @Override
