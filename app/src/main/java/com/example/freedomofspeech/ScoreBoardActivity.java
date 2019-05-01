@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Button;
+import android.content.Intent;
 
 public class ScoreBoardActivity extends AppCompatActivity {
 
@@ -19,10 +21,39 @@ public class ScoreBoardActivity extends AppCompatActivity {
     TextView p7score;
     TextView p8score;
 
+    Button endgameButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_board);
+
+        endgameButton = findViewById(R.id.endgameButton);
+
+        endgameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Ending/Restarting the Game procedures
+
+                //resets scoreboard to 0
+                for (int i = 0; i < MainActivity.scoreBoard.length; i++) {
+                    MainActivity.scoreBoard[i] = 0;
+                }
+                //resets usedWords list to empty
+                MainActivity.usedWords.clear();
+
+                //Resets variables
+                MainActivity.beginningOfGame = true;
+                MainActivity.previousWord = "";
+                MainActivity.jackpot = 1;
+                MainActivity.numPlayers = 1;
+                MainActivity.playerIndex = 0;
+
+
+                startActivity(new Intent(ScoreBoardActivity.this, MainActivity.class));
+            }
+        });
+
 
         // the number of players participating
         int numberOfPlayers = MainActivity.numPlayers;
