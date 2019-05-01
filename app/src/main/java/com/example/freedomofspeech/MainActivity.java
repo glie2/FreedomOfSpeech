@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
     TextView numberOfPlayers;
     SeekBar seekBar;
 
-    static List<Integer> score;
+    static int[] scoreBoard = new int[8];
+
+
     static int jackpot = 1;
     static int numPlayers = 1;
     static int playerIndex = 0;
@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                score = new ArrayList<>(numPlayers);
                 startActivity(new Intent(MainActivity.this, GameActivity.class));
             }
         });

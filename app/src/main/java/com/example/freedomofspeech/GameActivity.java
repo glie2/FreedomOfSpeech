@@ -97,6 +97,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(getIntent());
                 } else {
                     errorMessage.setVisibility(TextView.VISIBLE);
+                    for (int i = 0; i < MainActivity.scoreBoard.length; i++) {
+                        if (i == MainActivity.playerIndex) {
+                            continue;
+                        }
+                        MainActivity.scoreBoard[i] += MainActivity.jackpot;
+                    }
+                    MainActivity.jackpot = 1;
                 }
 
                 break;
