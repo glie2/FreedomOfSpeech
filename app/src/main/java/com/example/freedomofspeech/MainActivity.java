@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     Button startButton;
+    Button rulesButton;
     TextView numberOfPlayers;
     SeekBar seekBar;
 
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         usedWords = new ArrayList<>();
         startButton = findViewById(R.id.startButton);
+        rulesButton = findViewById(R.id.rules_button);
         numberOfPlayers = findViewById(R.id.numberOfPlayers);
         seekBar = findViewById(R.id.seekBar);
 
@@ -70,6 +72,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(MainActivity.this, GameActivity.class));
+            }
+        });
+        /**
+         * rulesButton: launches rules page
+         */
+        rulesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, RulesActivity.class));
             }
         });
     }

@@ -3,7 +3,7 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.freedomofspeech">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <dist:module dist:instant="true" />
 
@@ -14,8 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScoreBoardActivity"
-                  android:parentActivityName=".GameActivity"/>
+        <activity android:name=".RulesActivity"></activity>
+        <activity
+            android:name=".ScoreBoardActivity"
+            android:parentActivityName=".GameActivity" />
         <activity
             android:name=".GameActivity"
             android:parentActivityName=".MainActivity" />
