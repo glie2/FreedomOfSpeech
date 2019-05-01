@@ -98,7 +98,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     Thread.currentThread().interrupt();
                 }
                 //If word passed is valid
-                if (myDictionaryRequest.validity) {
+                if (myDictionaryRequest.validity && (MainActivity.previousWord.substring(MainActivity.previousWord.length()-1)).equals(word.substring(0,1))) {
                     //increment to next player
                     MainActivity.playerIndex++;
                     if (MainActivity.playerIndex >= MainActivity.numPlayers) {
