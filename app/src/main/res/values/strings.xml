@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">FreedomOfSpeech</string>
+    <string name="scoreboard">ScoreBoard</string>
+    <string name="player_1_score">Player 1 score:</string>
+    <string name="player_2_score">Player 2 score:</string>
+    <string name="player_3_score">Player 3 score:</string>
+    <string name="player_8_score">Player 8 score:</string>
+    <string name="player_7_score">Player 7 score:</string>
+    <string name="player_6_score">Player 6 score:</string>
+    <string name="player_5_score">Player 5 score:</string>
+    <string name="player_4_score">Player 4 score:</string>
 </resources>
