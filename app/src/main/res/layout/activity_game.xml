@@ -70,16 +70,13 @@
         android:id="@+id/jackpotNumber"
         android:layout_width="107dp"
         android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="436dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="404dp"
         android:text="0"
         android:textAlignment="center"
-        android:textSize="40sp"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.581"
-        app:layout_constraintStart_toEndOf="@+id/textJackpot" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/errorMessage"
