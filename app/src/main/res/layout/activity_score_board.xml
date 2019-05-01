@@ -7,32 +7,135 @@
     tools:context=".ScoreBoardActivity">
 
     <TextView
-        android:id="@+id/actualScores"
-        android:layout_width="306dp"
-        android:layout_height="484dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/scoreTitle"
         android:layout_width="306dp"
         android:layout_height="79dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="ScoreBoard"
         android:textAlignment="center"
         android:textSize="44sp"
-        app:layout_constraintBottom_toTopOf="@+id/actualScores"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player1score"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/ic_launcher_background"
+        android:text="Player 1 score: "
+        android:textAlignment="textStart"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player2score"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="154dp"
+        android:background="@drawable/ic_launcher_background"
+        android:text="Player 2 score: "
+        android:textAlignment="textStart"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player3score"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="204dp"
+        android:background="@drawable/ic_launcher_background"
+        android:text="Player 3 score: "
+        android:textAlignment="textStart"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player4score"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="254dp"
+        android:background="@drawable/ic_launcher_background"
+        android:text="Player 4 score: "
+        android:textAlignment="textStart"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player5score"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="304dp"
+        android:background="@drawable/ic_launcher_background"
+        android:text="Player 5 score: "
+        android:textAlignment="textStart"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player6score"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="354dp"
+        android:background="@drawable/ic_launcher_background"
+        android:text="Player 6 score: "
+        android:textAlignment="textStart"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player7score"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="404dp"
+        android:background="@drawable/ic_launcher_background"
+        android:text="Player 7 score: "
+        android:textAlignment="textStart"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player8score"
+        android:layout_width="306dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="454dp"
+        android:background="@drawable/ic_launcher_background"
+        android:text="Player 8 score: "
+        android:textAlignment="textStart"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,14 @@ import android.widget.TextView;
 public class ScoreBoardActivity extends AppCompatActivity {
 
     TextView scoreTitle;
-    TextView actualScores;
+    TextView p1score;
+    TextView p2score;
+    TextView p3score;
+    TextView p4score;
+    TextView p5score;
+    TextView p6score;
+    TextView p7score;
+    TextView p8score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,10 +23,14 @@ public class ScoreBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_score_board);
 
         scoreTitle = findViewById(R.id.scoreTitle);
-        actualScores = findViewById(R.id.actualScores);
-
-
-        actualScores.setText(Integer.toString(MainActivity.score.size()));
+        p1score = findViewById(R.id.player1score);
+        p2score = findViewById(R.id.player2score);
+        p3score = findViewById(R.id.player3score);
+        p4score = findViewById(R.id.player4score);
+        p5score = findViewById(R.id.player5score);
+        p6score = findViewById(R.id.player6score);
+        p7score = findViewById(R.id.player7score);
+        p8score = findViewById(R.id.player8score);
     }
 
 
