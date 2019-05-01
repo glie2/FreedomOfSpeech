@@ -58,13 +58,11 @@
         android:id="@+id/textJackpot"
         android:layout_width="129dp"
         android:layout_height="43dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="104dp"
         android:text="Jackpot"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainWord" />
 
@@ -73,17 +71,15 @@
         android:layout_width="107dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="436dp"
         android:text="0"
         android:textAlignment="center"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textJackpot"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintStart_toEndOf="@+id/textJackpot" />
 
     <TextView
         android:id="@+id/errorMessage"
