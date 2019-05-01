@@ -102,4 +102,27 @@
         app:layout_constraintTop_toBottomOf="@+id/submitButton"
         app:layout_constraintVertical_bias="0.088" />
 
+    <TextView
+        android:id="@+id/playerNumberTag"
+        android:layout_width="181dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="36dp"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/scoreboardButton"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:text="ScoreBoard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerNumberTag" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

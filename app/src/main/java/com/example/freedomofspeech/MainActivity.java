@@ -9,11 +9,21 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     Button startButton;
     TextView numberOfPlayers;
     SeekBar seekBar;
+
+    static List<Integer> score;
+    static int jackpot = 1;
+    static int numPlayers = 1;
+    static int playerIndex = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +41,8 @@ public class MainActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-                int numPlayers = progress + 1;
-                String numPlayersStr = Integer.toString(numPlayers);
-                numberOfPlayers.setText(numPlayersStr);
+                numPlayers = progress + 1;
+                numberOfPlayers.setText(Integer.toString(progress + 1));
             }
 
             @Override
@@ -53,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                score = new ArrayList<>(numPlayers);
                 startActivity(new Intent(MainActivity.this, GameActivity.class));
             }
         });
