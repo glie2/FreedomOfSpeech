@@ -15,7 +15,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="8dp"
-        android:text="mainWord Filler"
         android:textAlignment="center"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -17,6 +17,11 @@ public class MainActivity extends AppCompatActivity {
     SeekBar seekBar;
 
     static int[] scoreBoard = new int[8];
+    static String starterWords[] = {"stress", "toys", "scant", "answer", "trap",
+    "free", "sit", "unarmed", "detail", "romantic", "sign", "subtract", "impossible",
+    "jolly", "kill", "beast", "dizzy", "lake", "few", "phobic"};
+    static boolean beginningOfGame = true;
+    static String previousWord;
 
 
     static int jackpot = 1;

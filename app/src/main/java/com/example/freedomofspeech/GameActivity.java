@@ -9,7 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
-import android.content.Context;
+import java.util.Random;
+
 
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
@@ -66,6 +67,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         playerNumberTag.setText("Player : " + (MainActivity.playerIndex + 1));
         errorMessage.setVisibility(TextView.INVISIBLE);
         //mainWord.setText(#getLastword)
+        if (MainActivity.beginningOfGame) {
+            Random randomStarter = new Random();
+            int randIndex = randomStarter.nextInt(19);
+            mainWord.setText(MainActivity.starterWords[randIndex]);
+            MainActivity.previousWord = MainActivity.starterWords[randIndex];
+            MainActivity.beginningOfGame = false;
+        } else {
+            mainWord.setText(MainActivity.previousWord);
+        }
 
 
 
@@ -87,12 +97,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (Exception e) {
                     Thread.currentThread().interrupt();
                 }
+                //If word passed is valid
                 if (myDictionaryRequest.validity) {
+                    //increment to next player
                     MainActivity.playerIndex++;
                     if (MainActivity.playerIndex >= MainActivity.numPlayers) {
                         MainActivity.playerIndex = 0;
                         MainActivity.jackpot+=1;
                     }
+                    //make the "previousWord" this new word
+                    MainActivity.previousWord = word;
                     finish();
                     startActivity(getIntent());
                 } else {
