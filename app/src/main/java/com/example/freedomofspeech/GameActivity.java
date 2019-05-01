@@ -88,6 +88,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 if (myDictionaryRequest.validity) {
                     MainActivity.playerIndex++;
+                    if (MainActivity.playerIndex >= MainActivity.numPlayers) {
+                        MainActivity.playerIndex = 0;
+                    }
                     finish();
                     startActivity(getIntent());
 
