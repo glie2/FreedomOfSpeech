@@ -64,6 +64,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         //Sets up Screen w/ correct jackpot value, palyer id, word at top
         jackpotNumber.setText(Integer.toString(MainActivity.jackpot));
         playerNumberTag.setText("Player : " + (MainActivity.playerIndex + 1));
+        errorMessage.setVisibility(TextView.INVISIBLE);
         //mainWord.setText(#getLastword)
 
 
@@ -90,10 +91,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     MainActivity.playerIndex++;
                     if (MainActivity.playerIndex >= MainActivity.numPlayers) {
                         MainActivity.playerIndex = 0;
+                        MainActivity.jackpot+=1;
                     }
                     finish();
                     startActivity(getIntent());
-
+                } else {
+                    errorMessage.setVisibility(TextView.VISIBLE);
                 }
 
                 break;
