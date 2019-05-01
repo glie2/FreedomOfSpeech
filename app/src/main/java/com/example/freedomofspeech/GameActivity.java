@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
@@ -15,10 +16,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     TextView mainWord;
     TextView jackpotNumber;
     TextView errorMessage;
+    TextView playerNumberTag;
     EditText guessBox;
     Button submitButton;
-    TextView defBox;
-
+    Button scoreboardButton;
 
     String url;
 
@@ -32,15 +33,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mainWord = findViewById(R.id.mainWord);
         jackpotNumber = findViewById(R.id.jackpotNumber);
         errorMessage = findViewById(R.id.errorMessage);
-
+        guessBox = findViewById(R.id.guessBox);
         submitButton = findViewById(R.id.submitButton);
+        scoreboardButton = findViewById(R.id.scoreboardButton);
+        playerNumberTag = findViewById(R.id.playerNumberTag);
+        jackpotNumber.setText(Integer.toString(MainActivity.jackpot));
+        //new
 
-        //Initial State
-        jackpotNumber.setText("1");
-
-        submitButton.setOnClickListener(this);
-
-
+        initialize();
 
   /*      submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,12 +59,29 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         */
     }
 
+    private void initialize () {
+        //Sets up Screen w/ correct jackpot value, palyer id, word at top
+        jackpotNumber.setText(Integer.toString(MainActivity.jackpot));
+        playerNumberTag.setText("Player : " + (MainActivity.playerIndex + 1));
+        //mainWord.setText(#getLastword)
+
+        submitButton.setOnClickListener(this);
+
+        scoreboardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Opens new screen (scoreboard)
+                startActivity(new Intent(GameActivity.this, ScoreBoardActivity.class));
+            }
+        });
+    }
+
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.submitButton:
                 guessBox = findViewById(R.id.guessBox);
                 String word = guessBox.getText().toString();
-                Log.d("shit", word);
+                //Log.d("shit", word);
                 final String word_id = word.toLowerCase();
                 url += word_id;
                 Dictionary myDictionaryRequest = new Dictionary(this);
@@ -74,7 +91,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (Exception e) {
                     Thread.currentThread().interrupt();
                 }
-                Log.d("fuck", Boolean.toString(myDictionaryRequest.validity));
+                //Log.d("fuck", Boolean.toString(myDictionaryRequest.validity));
                 /*
                 if (myDictionaryRequest.validity) {
                     // clear word, bring to top, next player
@@ -87,6 +104,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
 
 
 
