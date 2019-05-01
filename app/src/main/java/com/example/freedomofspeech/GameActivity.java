@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
+import android.widget.Toast;
+
 import java.util.Random;
 
 
@@ -120,6 +122,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                         MainActivity.scoreBoard[i] += MainActivity.jackpot;
                     }
                     MainActivity.jackpot = 1;
+                    Toast.makeText(getApplicationContext(), "Invalid! End of Round!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(GameActivity.this, ScoreBoardActivity.class));
                 }
 
                 break;
