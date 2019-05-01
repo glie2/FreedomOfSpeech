@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     "jolly", "kill", "beast", "dizzy", "lake", "few", "phobic"};
     static boolean beginningOfGame = true;
     static String previousWord;
+    static ArrayList<String> usedWords;
 
 
     static int jackpot = 1;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        usedWords = new ArrayList<>();
         startButton = findViewById(R.id.startButton);
         numberOfPlayers = findViewById(R.id.numberOfPlayers);
         seekBar = findViewById(R.id.seekBar);

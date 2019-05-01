@@ -72,6 +72,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             int randIndex = randomStarter.nextInt(19);
             mainWord.setText(MainActivity.starterWords[randIndex]);
             MainActivity.previousWord = MainActivity.starterWords[randIndex];
+            MainActivity.usedWords.add(MainActivity.previousWord);
             MainActivity.beginningOfGame = false;
         } else {
             mainWord.setText(MainActivity.previousWord);
@@ -98,7 +99,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     Thread.currentThread().interrupt();
                 }
                 //If word passed is valid
-                if (myDictionaryRequest.validity && (MainActivity.previousWord.substring(MainActivity.previousWord.length()-1)).equals(word.substring(0,1))) {
+                if (myDictionaryRequest.validity && (MainActivity.previousWord.substring(MainActivity.previousWord.length()-1)).equals(word.substring(0,1)) && (!MainActivity.usedWords.contains(word))) {
                     //increment to next player
                     MainActivity.playerIndex++;
                     if (MainActivity.playerIndex >= MainActivity.numPlayers) {
@@ -106,6 +107,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                         MainActivity.jackpot+=1;
                     }
                     //make the "previousWord" this new word
+                    MainActivity.usedWords.add(word);
                     MainActivity.previousWord = word;
                     finish();
                     startActivity(getIntent());
