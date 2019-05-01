@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
+import android.content.Context;
 
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
@@ -65,17 +66,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         playerNumberTag.setText("Player : " + (MainActivity.playerIndex + 1));
         //mainWord.setText(#getLastword)
 
+
+
         submitButton.setOnClickListener(this);
-
-        scoreboardButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Opens new screen (scoreboard)
-                startActivity(new Intent(GameActivity.this, ScoreBoardActivity.class));
-            }
-        });
+        scoreboardButton.setOnClickListener(this);
     }
-
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.submitButton:
@@ -91,19 +86,21 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (Exception e) {
                     Thread.currentThread().interrupt();
                 }
-                //Log.d("fuck", Boolean.toString(myDictionaryRequest.validity));
-                /*
                 if (myDictionaryRequest.validity) {
-                    // clear word, bring to top, next player
-                } else {
-                    // display error message
+                    MainActivity.playerIndex++;
+                    finish();
+                    startActivity(getIntent());
+
                 }
+
                 break;
-            case R.id.jackpotNumber:
-            */
+            case R.id.scoreboardButton:
+                startActivity(new Intent(GameActivity.this, ScoreBoardActivity.class));
 
         }
     }
+
+
 
 
 
